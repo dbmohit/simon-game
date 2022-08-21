@@ -36,24 +36,11 @@ else {
   setTimeout(function () {
     $("body").removeClass("game-over");
   }, 1000);
+  $("#level-title").text("game over press any key to restart");
   startover();
 }
 }
-function startover(){
-  randomChosenColour = [];
-  started = false;
-  level = 0;
-  $("#level-title").text("game-over press any key to restart");
-  $(document).on("keypress",function(e){
-  
-    if(!started){
-      $("#level-title").text("Level " + level);
-      started = true;
-      nextSequence();
-      
-  }
-})
-}
+
 function nextSequence(){
   clickedpattern = [];
     level++;
@@ -79,4 +66,14 @@ function animate(currentColor) {
       $("#" + currentColor).removeClass("pressed");
     }, 100);
   }
+  function startover(){
+    // randomChosenColour = [];
+     //level = 0;
+     
+   
+       //3. Inside this function, you'll need to reset the values of level, gamePattern and started variables.
+       level = 0;
+       gamepattern = [];
+       started = false;
+   }
   
